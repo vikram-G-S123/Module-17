@@ -23,11 +23,46 @@ To write a Python program to **print topological sorting** of a **Directed Acycl
 ## PYTHON PROGRAM
 
 ```
-WRITE YOUR CODE HERE
+# Name: Vikram GS
+# Reg No: 212222060296
+
+from collections import deque
+
+graph = {
+    1: [2, 3],
+    2: [4],
+    3: [4],
+    4: []
+}
+
+in_degree = {i: 0 for i in graph}
+
+for u in graph:
+    for v in graph[u]:
+        in_degree[v] += 1
+
+queue = deque([i for i in in_degree if in_degree[i] == 0])
+
+print("Topological Sort:")
+
+while queue:
+    node = queue.popleft()
+    print(node, end=" ")
+    for neighbor in graph[node]:
+        in_degree[neighbor] -= 1
+        if in_degree[neighbor] == 0:
+            queue.append(neighbor)
+
+
 ```
 
 ## OUTPUT
 ```
+Topological Sort:
+1 2 3 4
+
 ```
 
 ## RESULT
+
+Topological sorting of DAG is performed successfully.
