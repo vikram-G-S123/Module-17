@@ -28,11 +28,38 @@ To write a Python program to **print DFS traversal** from a given source vertex.
 ## PYTHON PROGRAM
 
 ```
-ENTER YOUR CODE HERE
+
+# Name: Vikram GS
+# Reg No: 212222060296
+
+graph = {
+    1: [2, 3],
+    2: [4],
+    3: [],
+    4: []
+}
+
+visited = set()
+
+def dfs(node):
+    if node not in visited:
+        print(node, end=" ")
+        visited.add(node)
+        for neighbor in graph[node]:
+            dfs(neighbor)
+
+print("DFS Traversal:")
+dfs(1)
+
 ```
 
 ## OUTPUT
 ```
+
+DFS Traversal:
+1 2 4 3
 ```
 
 ## RESULT
+
+Depth First Search traversal is performed successfully.
