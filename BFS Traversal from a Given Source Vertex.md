@@ -26,10 +26,37 @@ To write a Python program to **print BFS traversal** from a given source vertex.
 ## PYTHON PROGRAM
 
 ```
-ENTER YOUR CODE HERE
+# Name: Vikram GS
+# Reg No: 212222060296
+
+from collections import deque
+
+graph = {
+    1: [2, 3],
+    2: [4],
+    3: [],
+    4: []
+}
+
+visited = set()
+queue = deque([1])
+
+print("BFS Traversal:")
+
+while queue:
+    node = queue.popleft()
+    if node not in visited:
+        print(node, end=" ")
+        visited.add(node)
+        queue.extend(graph[node])
+
 ```
 
 ## OUTPUT
 
+BFS Traversal:
+1 2 3 4
+
 
 ## RESULT
+DFS TRAVERSAL FROM A GIVEN SOURCE VERTEX
