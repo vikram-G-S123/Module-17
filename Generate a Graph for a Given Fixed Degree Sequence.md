@@ -21,11 +21,37 @@ To write a Python program to generate a graph for a given **fixed degree sequenc
 ## PYTHON PROGRAM
 
 ```
-ENTER YOUR CODE HERE
+
+# Name: Vikram GS
+# Reg No: 212222060296
+
+degree = [2, 1, 1]
+
+graph = {i: [] for i in range(len(degree))}
+
+for i in range(len(degree)):
+    for j in range(i+1, len(degree)):
+        if degree[i] > 0 and degree[j] > 0:
+            graph[i].append(j)
+            graph[j].append(i)
+            degree[i] -= 1
+            degree[j] -= 1
+
+print("Generated Graph:")
+for node in graph:
+    print(node, "->", graph[node])
+
 ```
 
 ## OUTPUT
 ```
+Generated Graph:
+0 -> [1, 2]
+1 -> [0]
+2 -> [0]
+
 ```
 
 ## RESULT
+
+Graph is generated successfully for the given degree sequence.
