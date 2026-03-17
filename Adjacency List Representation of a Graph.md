@@ -37,12 +37,33 @@ To write a Python program to demonstrate the **adjacency list representation** o
 ## PYTHON PROGRAM
 
 ```
-ENTER YOUR CODE HERE
+# Name: Vikram GS
+# Reg No: 212222060296
+
+graph = {
+    1: [2, 3],
+    2: [4],
+    3: [],
+    4: []
+}
+
+print("Adjacency List:")
+for node in graph:
+    print(node, "->", graph[node])
+
 ```
 
 ## OUTPUT
 ```
+Adjacency List:
+1 -> [2, 3]
+2 -> [4]
+3 -> []
+4 -> []
+
 ```
 
 ## RESULT
+
+Graph is represented successfully using adjacency list.
 
